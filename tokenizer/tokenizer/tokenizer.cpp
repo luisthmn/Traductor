@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include "bloques.h"
 #include <boost/tokenizer.hpp>
 #include <string>
 #include <conio.h>

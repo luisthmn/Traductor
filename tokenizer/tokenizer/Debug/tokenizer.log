@@ -1,30 +1,20 @@
-﻿Compilación iniciada a las 11/1/2019 2:10:02 PM.
-     1>Proyecto "D:\tokenizer\tokenizer\tokenizer.vcxproj" en el nodo 2 (build destinos).
-     1>InitializeBuildStatus:
-         Se creará "Debug\tokenizer.unsuccessfulbuild" porque se especificó "AlwaysCreate".
+﻿Compilación iniciada a las 05/11/2019 02:57:58 p. m..
+     1>Proyecto "C:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\tokenizer.vcxproj" en el nodo 2 (rebuild destinos).
+     1>_PrepareForClean:
+         Se eliminará el archivo "Debug\tokenizer.lastbuildstate".
+       InitializeBuildStatus:
+         Aplicando tarea Touch a "Debug\tokenizer.unsuccessfulbuild".
        ClCompile:
-         Todas las salidas están actualizadas.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\tokenizer.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt tokenizer.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\boost /IC:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\boost\boost /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\tokenizer.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\boost /IC:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\boost\boost /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\tokenizer.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt tokenizer.cpp
          tokenizer.cpp
-     1>d:\tokenizer\tokenizer\tokenizer.cpp(72): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128) : vea la declaración de 'getch'
-       ManifestResourceCompile:
-         Todas las salidas están actualizadas.
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\tokenizer\Debug\tokenizer.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\tokenizer.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\tokenizer\Debug\tokenizer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\tokenizer\Debug\tokenizer.lib" /MACHINE:X86 Debug\tokenizer.exe.embed.manifest.res
-         Debug\stdafx.obj
-         Debug\tokenizer.obj
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\tokenizer.exe.embed.manifest" /manifest Debug\tokenizer.exe.intermediate.manifest
-         Todas las salidas están actualizadas.
-       LinkEmbedManifest:
-         Todas las salidas están actualizadas.
-         tokenizer.vcxproj -> D:\tokenizer\Debug\tokenizer.exe
-       FinalizeBuildStatus:
-         Se eliminará el archivo "Debug\tokenizer.unsuccessfulbuild".
-         Aplicando tarea Touch a "Debug\tokenizer.lastbuildstate".
-     1>Compilación del proyecto terminada "D:\tokenizer\tokenizer\tokenizer.vcxproj" (build destinos).
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\assert.h(25): error C2143: error de sintaxis : falta ';' delante de 'cadena'
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\assert.h(25): error C2059: error de sintaxis : 'cadena'
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\assert.h(25): error C2143: error de sintaxis : falta ';' delante de '{'
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\assert.h(25): error C2447: '{' : falta el encabezado de función (¿lista formal de estilo anterior?)
+     1>Compilación del proyecto terminada "C:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\tokenizer.vcxproj" (rebuild destinos) -- ERROR.
 
-Compilación correcta.
+ERROR al compilar.
 
-Tiempo transcurrido 00:00:01.33
+Tiempo transcurrido 00:00:03.57
