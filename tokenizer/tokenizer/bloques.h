@@ -1,4 +1,5 @@
 #pragma once
+
 #include <cstdlib>
 #include <cstdio>
 #include <string>
@@ -10,4 +11,4 @@ enum{IF, WHILE};
 struct bloque {
 	string tipo;
 
-}
+};
