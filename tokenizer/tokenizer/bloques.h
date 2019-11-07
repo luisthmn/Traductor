@@ -10,4 +10,15 @@ enum{IF, WHILE};
 struct bloque {
 	string tipo;
 
-}
+	int linInicio;
+	int linFinal;
+	int length;
+
+	bloque *anterior;
+	bloque *siguiente;
+};
+struct simbolo{
+
+	string tipo;
+	bloque *anterior;
+};

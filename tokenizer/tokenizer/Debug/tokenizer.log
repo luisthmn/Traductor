@@ -1,20 +1,28 @@
-﻿Compilación iniciada a las 05/11/2019 02:57:58 p. m..
-     1>Proyecto "C:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\tokenizer.vcxproj" en el nodo 2 (rebuild destinos).
+﻿Build started 06/11/2019 22:28:15.
+     1>Project "C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\tokenizer.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
-         Se eliminará el archivo "Debug\tokenizer.lastbuildstate".
+         Deleting file "Debug\tokenizer.lastbuildstate".
        InitializeBuildStatus:
-         Aplicando tarea Touch a "Debug\tokenizer.unsuccessfulbuild".
+         Creating "Debug\tokenizer.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\boost /IC:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\boost\boost /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\tokenizer.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost" /I"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost\boost" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\tokenizer.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
          stdafx.cpp
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\boost /IC:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\boost\boost /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\tokenizer.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt tokenizer.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost" /I"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost\boost" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\tokenizer.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt tokenizer.cpp
          tokenizer.cpp
-     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\assert.h(25): error C2143: error de sintaxis : falta ';' delante de 'cadena'
-     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\assert.h(25): error C2059: error de sintaxis : 'cadena'
-     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\assert.h(25): error C2143: error de sintaxis : falta ';' delante de '{'
-     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\assert.h(25): error C2447: '{' : falta el encabezado de función (¿lista formal de estilo anterior?)
-     1>Compilación del proyecto terminada "C:\Users\nicol\Desktop\Traductor\tokenizer\tokenizer\tokenizer.vcxproj" (rebuild destinos) -- ERROR.
+     1>c:\users\alaur\desktop\luis thomson\lenguajes de programacion\traductor\tokenizer\tokenizer\tokenizer.cpp(73): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128) : see declaration of 'getch'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\Debug\tokenizer.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost" /LIBPATH:"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost\boost" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\tokenizer.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\Debug\tokenizer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\Debug\tokenizer.lib" /MACHINE:X86 Debug\stdafx.obj
+         Debug\tokenizer.obj
+     1>stdafx.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+         tokenizer.vcxproj -> C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\Debug\tokenizer.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\Debug\tokenizer.exe;#1" /manifest Debug\tokenizer.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\tokenizer.unsuccessfulbuild".
+         Touching "Debug\tokenizer.lastbuildstate".
+     1>Done Building Project "C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\tokenizer.vcxproj" (rebuild target(s)).
 
-ERROR al compilar.
+Build succeeded.
 
-Tiempo transcurrido 00:00:03.57
+Time Elapsed 00:00:05.77
