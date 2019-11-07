@@ -49,16 +49,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-<<<<<<< HEAD
-      <AdditionalIncludeDirectories>C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost;C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost\boost</AdditionalIncludeDirectories>
-=======
-      <AdditionalIncludeDirectories>C:\Users\nicol\Desktop\tokenizer\tokenizer\boost</AdditionalIncludeDirectories>
->>>>>>> 395f0838c7ef5bb043017c9b0d7119d3ac28d35e
+      <AdditionalIncludeDirectories>C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost;C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost\boost</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
