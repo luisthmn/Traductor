@@ -2,12 +2,17 @@
 //
 
 #include "stdafx.h"
-#include "bloques.h"
 #include <boost/tokenizer.hpp>
 #include <string>
 #include <conio.h>
+#include <cstdlib>
+#include <iostream>
+#include "bloques.h"
 
-int _tmain(int argc, _TCHAR* argv[])
+
+using namespace std;
+
+int main()
 {
  /*std::string str = "for(int m = 0;m < 10;m++)";
   typedef boost::tokenizer<boost::char_separator<char> > 
@@ -68,7 +73,7 @@ int _tmain(int argc, _TCHAR* argv[])
     for (tokenizer::iterator tok_iter = tokens.begin();
          tok_iter != tokens.end(); ++tok_iter)
 		
-		 std::cout << "<" << *tok_iter << "> " << "\n";
+		 cout << "<" << *tok_iter << "> " << "\n";
    
 	getch();
 	return 0;

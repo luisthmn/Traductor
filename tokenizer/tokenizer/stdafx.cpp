@@ -4,6 +4,5 @@
 
 #include "stdafx.h"
 
-
 // TODO: mencionar los encabezados adicionales que se necesitan en STDAFX.H
 // pero no en este archivo

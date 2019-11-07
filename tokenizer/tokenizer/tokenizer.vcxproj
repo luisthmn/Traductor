@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{327D3231-4648-4D12-9226-C410C46CA5F8}</ProjectGuid>
+    <ProjectGuid>{88C8D668-4794-4182-BCE6-DBB401084A4F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>tokenizer</RootNamespace>
   </PropertyGroup>
@@ -38,8 +38,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\tokenizer\tokenizer\boost\boost;D:\tokenizer\tokenizer\boost;$(IncludePath)</IncludePath>
+    <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -50,7 +49,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+<<<<<<< HEAD
       <AdditionalIncludeDirectories>C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost;C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost\boost</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>C:\Users\nicol\Desktop\tokenizer\tokenizer\boost</AdditionalIncludeDirectories>
+>>>>>>> 395f0838c7ef5bb043017c9b0d7119d3ac28d35e
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -87,9 +90,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="tokenizer.cpp">
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-    </ClCompile>
+    <ClCompile Include="tokenizer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
