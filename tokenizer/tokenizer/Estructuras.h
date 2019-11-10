@@ -238,7 +238,7 @@ void colaDeclaracion::pintar(){
     p = _principio;
 
 	cout << endl << endl << "Esta es la lista de declaraciones encontradas (Que estan fuera de los bloques)"<< endl << endl;
-	int j = 0;
+	int j = 1;
 	while(p){
 
 		
@@ -256,6 +256,7 @@ void colaDeclaracion::pintar(){
 		cout << "\n" << "Tamano Declaracion: " << p ->lengthDeclaracion;
 		cout << endl << endl;
         p = p -> siguiente;
+		j++;
     }
 }
 ////////////////////////////////////////////
