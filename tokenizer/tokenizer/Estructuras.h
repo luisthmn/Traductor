@@ -5,6 +5,27 @@
 using namespace std;
 
 /////////////////////////////////////
+struct declaracion{                            
+	string simbolos[200];
+	int elementoiInicialDeclaracion;
+	int elementoFinalDeclaracion;
+	int lengthDeclaracion;
+    declaracion *siguiente;
+};
+//////////////////////////////////////
+class colaDeclaracion{
+    declaracion *_principio, *_final;
+    int cuantos;
+
+    public:
+        colaDeclaracion();
+        ~colaDeclaracion();
+        void agregar(string codigo[], int elementoInicalDeclaracion, int elementoFinalDeclaracion);
+        string sacar();
+        void pintar();
+        int Cuantos();
+};
+/////////////////////////////////////////////////////////////////////////
 struct bloque{                            
 	string tipo;
 	int elementoiInicialDeclaracion;
@@ -15,16 +36,9 @@ struct bloque{
 	int lengthInterior;
 	int linInicioInterior;
 	int linFinInterior;
+	string subDeclaraciones[40];
 	string declaracion[100];
     bloque *siguiente;
-};
-/////////////////////////////////////
-struct declaracion{                            
-	string simbolos[200];
-	int elementoiInicialDeclaracion;
-	int elementoFinalDeclaracion;
-	int lengthDeclaracion;
-    declaracion *siguiente;
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class colaBloque{
@@ -40,19 +54,7 @@ class colaBloque{
         int Cuantos2();
 };
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-class colaDeclaracion{
-    declaracion *_principio, *_final;
-    int cuantos;
 
-    public:
-        colaDeclaracion();
-        ~colaDeclaracion();
-        void agregar(string codigo[], int elementoInicalDeclaracion, int elementoFinalDeclaracion);
-        string sacar();
-        void pintar();
-        int Cuantos();
-};
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -81,7 +83,19 @@ void colaBloque::agregar(string a, int elementoInicialDeclaracion, int elementoF
 	p->elementoFinalinterior = elementoFinalInterior;
 	p->lengthInterior = elementoFinalInterior - elementoInicialInterior;
 	
-	int i = 0, aux = elementoInicialDeclaracion;
+
+	//Esta parte es para guardar las subdeclaraciones (declaraciones adentro del bloque)
+	int aux2 = 0;
+	int i = elementoInicialInterior;
+	while(i<=elementoFinalInterior){
+			if(codigo[i]!= ";")p->subDeclaraciones[aux2]+= codigo[i];
+			if(codigo[i]== ";")aux2++;
+			i++;
+	}
+	p->subDeclaraciones[aux2] = "";
+
+	i = 0;
+	int aux = elementoInicialDeclaracion;
 	while(i<=p->lengthDeclaracion){
 		p->declaracion[i] = codigo[aux];
 		i++;
@@ -157,6 +171,16 @@ void colaBloque::pintar(){
 		cout << "\n" << "Inicio Interior: " << p ->elementoiInicialinterior;
 		cout << "\n" << "Final Interior: " << p->elementoFinalinterior;
 		cout << "\n" << "Tamano Interior: " << p ->lengthInterior;
+		cout << "\n" << "Declaraciones en el interior del Bloque:";
+		//Pintamos la subdeclaraciones del bloque
+		i = 0;
+		while(p->subDeclaraciones[i]!=""){
+			cout << "\n" << "(";
+			cout << p->subDeclaraciones[i];
+			cout << ")";
+			i++;
+		}
+
 		cout << endl << endl;
         p = p -> siguiente;
     }
