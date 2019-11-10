@@ -151,12 +151,12 @@ void colaBloque::pintar(){
 		}
 		cout << ")";
 
-		cout << "\n" << "numero de elemento inicial declaracion: " << p ->elementoiInicialDeclaracion;
-		cout << "\n" << "numero de elemento final declaracion: " << p ->elementoFinalDeclaracion;
-		cout << "\n" << "Cantidad de elementos en la declaracion del bloque: " << p ->lengthDeclaracion;
-		cout << "\n" << "numero de elmento inicial en el interior: " << p ->elementoiInicialinterior;
-		cout << "\n" << "numereo de elemento final en el interior: " << p->elementoFinalinterior;
-		cout << "\n" << "Cantidad de elementos en el interior del bloque: " << p ->lengthInterior;
+		cout << "\n" << "Inicio Declaracion: " << p ->elementoiInicialDeclaracion;
+		cout << "\n" << "Fin Declaracion: " << p ->elementoFinalDeclaracion;
+		cout << "\n" << "Tamaño declaracion Bloque: " << p ->lengthDeclaracion;
+		cout << "\n" << "Inicio Interior: " << p ->elementoiInicialinterior;
+		cout << "\n" << "Final Interior: " << p->elementoFinalinterior;
+		cout << "\n" << "Tamano Interior: " << p ->lengthInterior;
 		cout << endl << endl;
         p = p -> siguiente;
     }
@@ -238,21 +238,22 @@ void colaDeclaracion::pintar(){
     p = _principio;
 
 	cout << endl << endl << "Esta es la lista de declaraciones encontradas (Que estan fuera de los bloques)"<< endl << endl;
+	int j = 0;
 	while(p){
 
-		int j = 0;
+		
 		//Pintamos la declaracion
 		int i = 0;
-		cout << "\n" << "Declaracion #: " << "(";
+		cout << "\n" << "Declaracion #" << j << ": (";
 		while(i<= p->lengthDeclaracion){
 			cout << p->simbolos[i];
 			i++;
 		}
 		cout << ")";
 
-		cout << "\n" << "numero de elemento inicial declaracion: " << p ->elementoiInicialDeclaracion;
-		cout << "\n" << "numero de elemento final declaracion: " << p ->elementoFinalDeclaracion;
-		cout << "\n" << "Cantidad de elementos en la declaracion del bloque: " << p ->lengthDeclaracion;
+		cout << "\n" << "Inicio Declaracion: " << p ->elementoiInicialDeclaracion;
+		cout << "\n" << "Fin Declaracion: " << p ->elementoFinalDeclaracion;
+		cout << "\n" << "Tamano Declaracion: " << p ->lengthDeclaracion;
 		cout << endl << endl;
         p = p -> siguiente;
     }
