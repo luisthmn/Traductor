@@ -7,7 +7,7 @@
 using namespace std;
 
 enum{IF, WHILE};
-
+////////////////////////////////////////
 struct bloque {
 	string tipo;
 	int linInicio;
@@ -17,10 +17,16 @@ struct bloque {
 	bloque *anterior;
 	bloque *siguiente;
 };
-
+///////////////////////////////////////
 struct simbolo{
 	string tipo;
 	int lin;
 
 	simbolo *anterior;
 };
+/////////////////////////////////////
+
+
+
+
+
