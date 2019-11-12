@@ -42,10 +42,11 @@ struct bloque{
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class colaBloque{
-    bloque *_principio, *_final;
+
     int cuantos2;
 
     public:
+		bloque *_principio, *_final;
         colaBloque();
         ~colaBloque();
         void agregar(string a, int elementoInicalDeclaracion, int elementoFinalDeclaracion, int elementoInicialInterior, int elementoFinalInterior, string codigo[]);
@@ -167,7 +168,7 @@ void colaBloque::pintar(){
 
 		cout << "\n" << "Inicio Declaracion: " << p ->elementoiInicialDeclaracion;
 		cout << "\n" << "Fin Declaracion: " << p ->elementoFinalDeclaracion;
-		cout << "\n" << "Tamaño declaracion Bloque: " << p ->lengthDeclaracion;
+		cout << "\n" << "Tamano declaracion Bloque: " << p ->lengthDeclaracion;
 		cout << "\n" << "Inicio Interior: " << p ->elementoiInicialinterior;
 		cout << "\n" << "Final Interior: " << p->elementoFinalinterior;
 		cout << "\n" << "Tamano Interior: " << p ->lengthInterior;

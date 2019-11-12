@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <sstream> 
 #include <iostream>
-#include "Estructuras.h"
+#include "funciones3D.h"
 
 using namespace std;
 
@@ -37,6 +37,7 @@ int main()
 	int auxInteriorBloque = 0;
 	//Arreglo bloques/simbolos
 	string elementos[1000];
+	int cantidadElementos = 0;
 
 	//Datos auxiliares para agregar Bloques
 	//////////////////////////////////////
@@ -68,7 +69,9 @@ int main()
 	//Ciclo que se repetira por cada bloque/simbolo en el codigo insertado
     for (tokenizer::iterator tok_iter = tokens.begin();
          tok_iter != tokens.end(); ++tok_iter){
-			
+		 
+		 //Llevamos cuenta de la cantidad de elementos en el codigo
+		 cantidadElementos++;
 		 //Anotamos el bloque/simbolo encontrado en consola junto con el numero de elemento que es
 		 cout << "#" << numElemento << ":" << *tok_iter;
 
@@ -159,6 +162,15 @@ int main()
 		 cout << endl;
 	}
 	//Fin de lectura del codigo
+	//Ahora procedemos a transformar el codigo a codigo de 3 direcciones
+	int i = 0;
+	/*while(i<=cantidadElementos){
+		cout << endl << endl << "HOLA PARIENTE" << endl << endl;
+		datos *Datos = buscarBloque(i, listaBloques);
+		cout << Datos->tipo << endl;
+		cout << Datos->finalCondicional << endl;
+		break;
+	}*/
    //////////////////////////////////////////////////////////////////////////////
 	listaBloques.pintar();
 	cout << "En total hay " << listaBloques.Cuantos2() << " bloque(s)\n\n";
