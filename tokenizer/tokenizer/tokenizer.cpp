@@ -51,9 +51,9 @@ int main()
 	//Inicio del Tokenizador,
 	/////////////////////////////////////////////////////////////////////////////
 	//Primero insertamos el codigo que evaluaremos
-	std::string str = "int m = 0; while(m<=10){ cout << m; m++;} if(m==10){ m=m+2;} int j = 3+4; int s = 25; s=m*m;";
+	std::string str = "while(m<=10){ cout << m; m++;} if(m==10){ m=m+2;} int j = 3+4; int s = 25; s=m*m;";
 	
-	cout << endl << endl << "El codigo c++ a transformar es:\n"<< "int m = 0;\nwhile(m<=10){\n  cout << m; m++;\n}\nif(m==10){\n  m=m+2;\n}\nint j = 3+4;\nint s = 25;\ns=m*m;" << endl << endl;
+	cout << endl << endl << "El codigo c++ a transformar es:\n"<< "while(m<=10){\n  cout << m; m++;\n}\nif(m==10){\n  m=m+2;\n}\nint j = 3+4;\nint s = 25;\ns=m*m;" << endl << endl;
 	cout << endl << "El tokenizador separo los simbolos de la siguiente forma:\n";
 
 	/////////////////////////////////////////////////////////////////////////////////////
@@ -164,13 +164,27 @@ int main()
 	//Fin de lectura del codigo
 	//Ahora procedemos a transformar el codigo a codigo de 3 direcciones
 	int i = 0;
-	/*while(i<=cantidadElementos){
-		cout << endl << endl << "HOLA PARIENTE" << endl << endl;
-		datos *Datos = buscarBloque(i, listaBloques);
-		cout << Datos->tipo << endl;
-		cout << Datos->finalCondicional << endl;
+	bloque *p = new bloque;
+	declaracion *q = new declaracion;
+	p = listaBloques._principio;
+	q = listaDeclaraciones._principio;
+
+	while(i<=cantidadElementos){
+		if(elementos[i] == "while" || elementos[i] =="if"){
+				p = listaBloques.sacar();
+				cout << endl << "Imprimi el bloque en modo 3D " << endl;
+				cout << endl << "saque el bloque " << endl;
+				i+= (p->lengthDeclaracion+2) + (p->lengthInterior+2); 
+		}
+		else{
+			   p = listaDeclaraciones.sacar();
+		}
+		
+		
+		//cout << Datos->tipo << endl;
+		//cout << Datos->finalCondicional << endl;
 		break;
-	}*/
+	}
    //////////////////////////////////////////////////////////////////////////////
 	listaBloques.pintar();
 	cout << "En total hay " << listaBloques.Cuantos2() << " bloque(s)\n\n";

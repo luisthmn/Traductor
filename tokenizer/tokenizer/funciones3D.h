@@ -3,37 +3,15 @@
 #include <string>
 #include "Estructuras.h"
 
-struct datos{
-	string tipo;
-	int inicioInterior;
-	int finalInterior;
-	int inicioCondicional;
-	int finalCondicional;
-};
+
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////////////
-datos *buscarBloque(int i, colaBloque Bloques){
-
-	datos *Datos = new datos;
-	bloque *p = new bloque;
-	p = Bloques._principio;
-
-	while(p){
-		if(p->elementoiInicialDeclaracion == i+2){
-			Datos->tipo = p->tipo;
-			Datos->finalCondicional = p->elementoFinalDeclaracion;
-			Datos->inicioCondicional = p->elementoiInicialDeclaracion;
-			Datos->finalInterior = p->elementoFinalinterior;
-			Datos->inicioInterior = p->elementoiInicialinterior;
-
-			return Datos;
-
-		}else{
-			p= p->siguiente;
+bloque *buscarBloque(int i, bloque *p){
+		/*if(p->elementoiInicialDeclaracion-2 == "while" || p->elementoiInicialDeclaracion-2 == "if"){
+			return p;
 		}
-	};
-	return NULL;
+		else return NULL;*/
 };
 //////////////////////////////////////////////////////////////////////////////////////
 int buscarElemento(int i){

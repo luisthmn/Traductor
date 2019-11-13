@@ -14,10 +14,11 @@ struct declaracion{
 };
 //////////////////////////////////////
 class colaDeclaracion{
-    declaracion *_principio, *_final;
+    
     int cuantos;
 
     public:
+		declaracion *_principio, *_final;
         colaDeclaracion();
         ~colaDeclaracion();
         void agregar(string codigo[], int elementoInicalDeclaracion, int elementoFinalDeclaracion);
@@ -50,7 +51,7 @@ class colaBloque{
         colaBloque();
         ~colaBloque();
         void agregar(string a, int elementoInicalDeclaracion, int elementoFinalDeclaracion, int elementoInicialInterior, int elementoFinalInterior, string codigo[]);
-        string sacar();
+        bloque* sacar();
         void pintar();
         int Cuantos2();
 };
@@ -116,12 +117,13 @@ void colaBloque::agregar(string a, int elementoInicialDeclaracion, int elementoF
     cuantos2++;
 }
 /////////////////////////////////////
-string colaBloque::sacar(){
-    bloque *p;
+bloque* colaBloque::sacar(){
+    bloque *p, *aux;
     string valor;
 
     if(_principio != NULL){
         p = _principio;
+		aux = p;
         _principio = p->siguiente;
         valor = p->tipo;
         delete p;
@@ -129,9 +131,9 @@ string colaBloque::sacar(){
     }
     else{
         _final = NULL;
-        return "VACIO";
+        return NULL;
     }
-    return valor;
+    return aux;
 }
 ///////////////////////////////////
 colaBloque::~colaBloque(){
