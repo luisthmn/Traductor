@@ -22,7 +22,7 @@ class colaDeclaracion{
         colaDeclaracion();
         ~colaDeclaracion();
         void agregar(string codigo[], int elementoInicalDeclaracion, int elementoFinalDeclaracion);
-        string sacar();
+        declaracion* sacar();
         void pintar();
         int Cuantos();
 };
@@ -80,7 +80,7 @@ void colaBloque::agregar(string a, int elementoInicialDeclaracion, int elementoF
 	if(p->tipo == "if") p->tipo = "IF";
 	p->elementoiInicialDeclaracion = elementoInicialDeclaracion;
 	p->elementoFinalDeclaracion = elementoFinalDeclaracion;
-	p->lengthDeclaracion = elementoFinalDeclaracion - elementoInicialDeclaracion;
+	p->lengthDeclaracion = elementoFinalDeclaracion - elementoInicialDeclaracion + 1;
 	p->elementoiInicialinterior = elementoInicialInterior;
 	p->elementoFinalinterior = elementoFinalInterior;
 	p->lengthInterior = elementoFinalInterior - elementoInicialInterior;
@@ -118,22 +118,19 @@ void colaBloque::agregar(string a, int elementoInicialDeclaracion, int elementoF
 }
 /////////////////////////////////////
 bloque* colaBloque::sacar(){
-    bloque *p, *aux;
-    string valor;
+    bloque *p;
 
     if(_principio != NULL){
-        p = _principio;
-		aux = p;
-        _principio = p->siguiente;
-        valor = p->tipo;
-        delete p;
-        cuantos2--;
+		p = _principio;
+		_principio = p->siguiente;
+		cuantos2--;
     }
     else{
         _final = NULL;
         return NULL;
     }
-    return aux;
+	return p;
+	delete p;
 }
 ///////////////////////////////////
 colaBloque::~colaBloque(){
@@ -206,7 +203,7 @@ void colaDeclaracion::agregar(string codigo[], int elementoInicialDeclaracion, i
 	
 	p->elementoiInicialDeclaracion = elementoInicialDeclaracion;
 	p->elementoFinalDeclaracion = elementoFinalDeclaracion;
-	p->lengthDeclaracion = elementoFinalDeclaracion - elementoInicialDeclaracion;
+	p->lengthDeclaracion = elementoFinalDeclaracion - elementoInicialDeclaracion + 1;
 	
 	int i = 0, aux =elementoInicialDeclaracion;
 	while(i<=p->lengthDeclaracion){
@@ -228,21 +225,20 @@ void colaDeclaracion::agregar(string codigo[], int elementoInicialDeclaracion, i
     cuantos++;
 }
 /////////////////////////////////////
-string colaDeclaracion::sacar(){
+declaracion* colaDeclaracion::sacar(){
     declaracion *p;
-    string valor;
 
     if(_principio != NULL){
         p = _principio;
         _principio = p->siguiente;
-        delete p;
         cuantos--;
     }
     else{
         _final = NULL;
-        return "VACIO";
+        return NULL;
     }
-    return "Elemento eliminado";
+	return p;
+	delete p;
 }
 ///////////////////////////////////
 colaDeclaracion::~colaDeclaracion(){
