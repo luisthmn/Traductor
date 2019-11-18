@@ -1,4 +1,4 @@
-﻿Build started 17/11/2019 9:32:34.
+﻿Build started 17/11/2019 19:02:06.
      1>Project "C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\tokenizer.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\tokenizer.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -6,7 +6,7 @@
          All outputs are up-to-date.
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\tokenizer.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt tokenizer.cpp
          tokenizer.cpp
-     1>c:\users\alaur\desktop\luis thomson\lenguajes de programacion\traductor\tokenizer\tokenizer\tokenizer.cpp(196): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>c:\users\alaur\desktop\luis thomson\lenguajes de programacion\traductor\tokenizer\tokenizer\tokenizer.cpp(222): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128) : see declaration of 'getch'
        ManifestResourceCompile:
          All outputs are up-to-date.
@@ -27,4 +27,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.42
+Time Elapsed 00:00:02.38
