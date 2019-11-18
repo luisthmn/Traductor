@@ -51,9 +51,9 @@ int main()
 	//Inicio del Tokenizador,
 	/////////////////////////////////////////////////////////////////////////////
 	//Primero insertamos el codigo que evaluaremos
-	std::string str = "while(m<=10){ cout << m; m++;} if(m==10){ m=m+2;} int j = 3+4; int s = 25; float var=j*j;";
+	string str = "while(m<=10){ cout << m; m++;} if(m==10){ m=m+2; cout << m;} int j = 3+4; int s = 25; float var=j*j;";
 	
-	cout << endl << endl << "El codigo c++ a transformar es:\n"<< "while(m<=10){\n  cout << m;\n   m++;\n}\nif(m==10){\n  m=m+2;\n}\nint j = 3+4;\nint s = 25;\nfloat var=j*j;" << endl << endl;
+	cout << endl << endl << "El codigo c++ a transformar es:\n"<< "while(m<=10){\n  cout << m;\n   m++;\n}\nif(m==10){\n  m=m+2;\ncout << m;\n}\nint j = 3+4;\nint s = 25;\nfloat var=j*j;" << endl << endl;
 	cout << endl << "A continuacion se realizara la lectura de su codigo en c++ para transformarlo a codigo 3 direcciones";
 	cout << endl;
 	system("pause");
@@ -181,9 +181,6 @@ int main()
 
 	//Este ciclo se encarga de ir extrayendo los bloques y declaraciones e ir transformandolos 
 	//a codigo de tres direcciones
-	//Esta variable nos permitirá llevar conteo de las lineas para pintar en 3D
-	int cont3D = 0;
-
 	//Limpiamos la pantalla antes de pasar a transformar el código
 	//(Le avisamos al usuario)
 	cout << endl << "Se ha realizado la lectura de su codigo en c++";
@@ -197,7 +194,7 @@ int main()
 			//Sacamos el bloque de la lista y lo pintamos en codigo 3D	
 			p = listaBloques.sacar();
 			//Guardamos el numero de linea en 3D que nos quedamos
-			cont3D = pintarBloque3D(p, cont3D);
+			pintarBloque3D(p);
 			//Guardamos que elemento revisaremos despues
 			i+= p->lengthDeclaracion + p->lengthInterior + 6;
 		}
@@ -208,7 +205,7 @@ int main()
 			//declaraciones y la pintamos
 			q = listaDeclaraciones.sacar();
 			//Guardamos en que linea de codigo 3D nos quedamos
-			cont3D = pintarDeclaracion3D(q, cont3D);
+			pintarDeclaracion3D(q);
 			//Guardamos que elemento sigue de revisar despues
 			i+= (q->elementoFinalDeclaracion - q->elementoiInicialDeclaracion)+2;
 		}

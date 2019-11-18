@@ -90,8 +90,12 @@ void colaBloque::agregar(string a, int elementoInicialDeclaracion, int elementoF
 	int aux2 = 0;
 	int i = elementoInicialInterior;
 	while(i<=elementoFinalInterior){
-			if(codigo[i]!= ";")p->subDeclaraciones[aux2]+= codigo[i];
+			if(codigo[i]!= ";"){
+				if(codigo[i] == "=") p->subDeclaraciones[aux2]+= " := ";
+				else p->subDeclaraciones[aux2]+= codigo[i];
+			}
 			if(codigo[i]== ";")aux2++;
+			
 			i++;
 	}
 	p->subDeclaraciones[aux2] = "";

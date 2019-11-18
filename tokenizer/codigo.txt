@@ -1,0 +1,10 @@
+while(m<=10){ 
+	cout << m;
+	m++;
+} 
+if(m==10){ 
+m=m+2;
+} 
+int j = 3+4;
+int s = 25;
+float var=j*j;
