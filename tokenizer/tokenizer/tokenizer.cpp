@@ -54,10 +54,10 @@ int main()
 	std::string str = "while(m<=10){ cout << m; m++;} if(m==10){ m=m+2;} int j = 3+4; int s = 25; float var=j*j;";
 	
 	cout << endl << endl << "El codigo c++ a transformar es:\n"<< "while(m<=10){\n  cout << m;\n   m++;\n}\nif(m==10){\n  m=m+2;\n}\nint j = 3+4;\nint s = 25;\nfloat var=j*j;" << endl << endl;
-	/*cout << endl << "A continuacion se realizara la lectura de su codigo en c++ para transformarlo a codigo 3 direcciones";
+	cout << endl << "A continuacion se realizara la lectura de su codigo en c++ para transformarlo a codigo 3 direcciones";
 	cout << endl;
 	system("pause");
-	system("cls");*/
+	system("cls");
 	cout << endl << "El tokenizador separo los simbolos de la siguiente forma:\n";
 	/////////////////////////////////////////////////////////////////////////////////////
 	//Esto es magia que utiliza librerias que no entiendo, no entenderé ni deseo entender
@@ -186,19 +186,18 @@ int main()
 
 	//Limpiamos la pantalla antes de pasar a transformar el código
 	//(Le avisamos al usuario)
-	/*cout << endl << "Se ha realizado la lectura de su codigo en c++";
+	cout << endl << "Se ha realizado la lectura de su codigo en c++";
 	cout << endl << "Ahora se transformara a codigo de tres direcciones\n";
 	system("pause");
-	system("cls");*/
+	system("cls");
 
-	listaVar listaVar;
 	while(true){
 		//Revisamos si lo que tenemos que pintar es un bloque
 		if(elementos[i] == "while" || elementos[i] =="if"){
 			//Sacamos el bloque de la lista y lo pintamos en codigo 3D	
 			p = listaBloques.sacar();
 			//Guardamos el numero de linea en 3D que nos quedamos
-			cont3D = pintarBloque3D(p, cont3D, listaVar);
+			cont3D = pintarBloque3D(p, cont3D);
 			//Guardamos que elemento revisaremos despues
 			i+= p->lengthDeclaracion + p->lengthInterior + 6;
 		}
@@ -209,7 +208,7 @@ int main()
 			//declaraciones y la pintamos
 			q = listaDeclaraciones.sacar();
 			//Guardamos en que linea de codigo 3D nos quedamos
-			cont3D = pintarDeclaracion3D(q, cont3D, listaVar);
+			cont3D = pintarDeclaracion3D(q, cont3D);
 			//Guardamos que elemento sigue de revisar despues
 			i+= (q->elementoFinalDeclaracion - q->elementoiInicialDeclaracion)+2;
 		}

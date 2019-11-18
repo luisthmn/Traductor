@@ -1,13 +1,14 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <sstream> 
 #include "Estructuras.h"
 #include "Estructuras3D.h"
 
 
 using namespace std;
 
-
+class listaVar listaVar;
 
 //Funcion auxiliar que revisa que una cadena contenga solo digitos
 //////////////////////////////////////////////////////////////////////////////////////
@@ -17,11 +18,10 @@ bool is_digits(const std::string &str)
 }
 //////////////////////////////////////////////////////////////////////////////////////
 
-
 //Esta funcion recibe un bloque en c++ y lo pasa a codigo de tres direcciones
 //la variable cont es el numero de linea en codigo tres direcciones en el que 
 //empezará a pintar
-int pintarBloque3D(bloque* p, int cont, listaVar listaVar){
+int pintarBloque3D(bloque* p, int cont){
 	cout << "\nt" << cont << " := "; 
 
 	cont++;
@@ -31,7 +31,7 @@ int pintarBloque3D(bloque* p, int cont, listaVar listaVar){
 //Esta funcion recibe una declaracion (fuera de bloque) en c++ y lo pasa a codigo de tres direcciones
 //la variable cont es el numero de linea en codigo tres direcciones en el que 
 //empezará a pintar
-int pintarDeclaracion3D(declaracion* p, int cont, listaVar listaVar){
+int pintarDeclaracion3D(declaracion* p, int cont){
 	cout << "\nt" << cont << " := ";
 	
 	int i = 0;
@@ -42,7 +42,6 @@ int pintarDeclaracion3D(declaracion* p, int cont, listaVar listaVar){
 			i++;
 			//En este punto p->simbolos[i] tiene el nombre de la variable declarada asi que la guardamos
 			//junto con el numero de linea en el que está ahora en el codigo 3D
-		//	cout << endl << endl << "Guarde " << p->simbolos[i] << " EN LA CLASE DE VARIABLES"<< endl;
 			listaVar.agregar(p->simbolos[i], cont);
 			while(p->simbolos[i]!="="){
 				i++;
@@ -54,17 +53,16 @@ int pintarDeclaracion3D(declaracion* p, int cont, listaVar listaVar){
 		//anteriormente (Y que guardamos)
 		if(!is_digits(p->simbolos[i]) && p->simbolos[i]!="+" && p->simbolos[i]!="-" && p->simbolos[i]!="*"&& p->simbolos[i]!="/"){
 		//	cout << endl << endl << "Buscando "<< p->simbolos[i] << " en la clase de variables" << endl;
-			p->simbolos[i] = listaVar.buscar(p->simbolos[i]);
+			//Hacemos un poco de magia aquí para transformar el numero de linea en codigo 3 direcciones
+			//correspondiente a la variable que usamos
+			stringstream ss;
+			ss << listaVar.buscar(p->simbolos[i]);
+			p->simbolos[i] = "t" + ss.str();
 		}
 		cout << p->simbolos[i];
 		i++;
 	}
 	cout << ";";
-
-	//cout << endl << endl << "HOLA HOLA ESTA ES LA COLA DE VARIABLES" << endl;
-	//listaVar.pintar();
-
-
 	cont++;
 	return cont;
 };

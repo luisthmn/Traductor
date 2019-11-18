@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-
-
 using namespace std;
 
 //Esta estructura es para ir almacenando todas las variables
@@ -11,7 +9,7 @@ using namespace std;
 ////////////////////////////////////
 struct variables{                           //Lista doblemente ligadas
 	string nombrec;
-	string linea3D;
+	int linea3D;
 
     variables *siguiente;
 };
@@ -24,10 +22,9 @@ class listaVar{
     public:
         listaVar();
         ~listaVar();
-		string buscar(string a);
+		int buscar(string a);
         void agregar(string a, int cont);
         void pintar();
-        int Cuantos2();
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -44,11 +41,10 @@ listaVar::listaVar(){
 //de tres direcciones, lo cual quiere decir que regresa en que linea del codigo de tres direcciones
 //fue declarada
 //////////////////////////////////////
-string listaVar::buscar(string a){
+int listaVar::buscar(string a){
 	variables *p;
 	p = _principio;
 	while(p){
-		//cout << endl << endl << "Comparando " << a << " con el elemento " << p->nombrec << endl;
 		if(p->nombrec == a){
 			return p->linea3D;
 		}
@@ -56,7 +52,7 @@ string listaVar::buscar(string a){
 			p = p->siguiente;
 		}
 	}
-	return "NADA";
+	return -1;
 }
 ///////////////////////////////////////
 //Funcion para agregar una variable nueva a la clase
@@ -90,10 +86,6 @@ listaVar::~listaVar(){
     return;
 }
 ///////////////////////////////
-int listaVar::Cuantos2(){
-    return(cuantos2);
-}
-/////////////////////////////////////////////
 void listaVar::pintar(){
     variables *p;
     p = _principio;
@@ -101,6 +93,5 @@ void listaVar::pintar(){
         cout << "\n " << p -> nombrec;
         p = p -> siguiente;
     }
-	cout << endl << endl << "En total hay " << cuantos2 << " variables" << endl;
 }
 /////////////////////////////////////////////
