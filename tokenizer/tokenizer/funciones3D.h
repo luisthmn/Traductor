@@ -9,7 +9,6 @@
 
 using namespace std;
 
-class listaVar listaVar;
 
 int etiquetas = 1;
 int cont = 0;
@@ -89,7 +88,6 @@ void pintarDeclaracion3D(declaracion* p){
 	while(p->simbolos[i]!=""){
 		if( p->simbolos[i]== "int"  ||  p->simbolos[i]== "double"  ||  p->simbolos[i]== "float"){
 			i++;
-			listaVar.agregar(p->simbolos[i], cont);
 			cout << p->simbolos[i];
 			cout << " := ";
 			i++;

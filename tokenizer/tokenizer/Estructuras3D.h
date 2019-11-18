@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <cstdlib>
 #include <string>
 using namespace std;
@@ -94,4 +94,4 @@ void listaVar::pintar(){
         p = p -> siguiente;
     }
 }
-/////////////////////////////////////////////
+/////////////////////////////////////////////*/

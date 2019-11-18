@@ -4,6 +4,7 @@ while(m<=10){
 } 
 if(m==10){ 
 m=m+2;
+cout << m;
 } 
 int j = 3+4;
 int s = 25;
