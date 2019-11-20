@@ -90,6 +90,10 @@ void pintarDeclaracion3D(declaracion* p){
 			i++;
 			cout << p->simbolos[i];
 			cout << " := ";
+			i+=2;
+		}
+		else if( p->simbolos[i] == "="){
+			cout << " := ";
 			i++;
 		}
 		cout << p->simbolos[i];
