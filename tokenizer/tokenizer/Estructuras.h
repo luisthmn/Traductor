@@ -94,7 +94,10 @@ void colaBloque::agregar(string a, int elementoInicialDeclaracion, int elementoF
 				if(codigo[i] == "=") p->subDeclaraciones[aux2]+= " := ";
 				else p->subDeclaraciones[aux2]+= codigo[i];
 			}
-			if(codigo[i]== ";")aux2++;
+			if(codigo[i]== ";"){
+				p->subDeclaraciones[aux2]+= codigo[i];
+				aux2++;
+			}
 			
 			i++;
 	}

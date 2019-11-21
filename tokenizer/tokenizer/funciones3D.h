@@ -36,7 +36,6 @@ void pintarBloque3D(bloque* p){
 		int i = 0;
 		while(p->declaracion[i]!=")"){
 			cout << p->declaracion[i];
-			var2 = p->declaracion[i];
 			i++;
 		}
 		cout << " goto L" << etiquetas;
@@ -62,7 +61,6 @@ void pintarBloque3D(bloque* p){
 		int i = 0;
 		while(p->declaracion[i]!=")"){
 			cout << p->declaracion[i];
-			var2 = p->declaracion[i];
 			i++;
 		}
 		cout << " goto L" << etiquetas;
@@ -74,20 +72,44 @@ void pintarBloque3D(bloque* p){
 		//En esta area imprimimos todo lo que esté dentro del if
 		i = 0;
 		while(p->subDeclaraciones[i] !=""){
+			//Tenemos que dividir en caracteres cada subdeclaracion
+			//Y lo guardamos en un arreglo
+			string subdec[200];
+			int j = 0;
+			int aux = 0;
+			var2 = p->subDeclaraciones[i][j];
+			while (true){
+				if(p->subDeclaraciones[i][j]==';')break;
+				if(p->subDeclaraciones[i][j] == ' ') j++;
+				subdec[aux] = p->subDeclaraciones[i][j];
+				j++;
+				aux++;
+			}
+			
 			//Esta seccion de codigo se encarga de las divisiones de linea
 			//adecuadas (Solo dos elementos max por argumento y que se respete la jerarquia de operadores)
-			////////////////////////////////////////////////
-			/*if(p->subDeclaraciones[i] == "+" || p->subDeclaraciones[i] == "-") signoMasMenos = true;
-			if(p->subDeclaraciones[i] == "*" || p->subDeclaraciones[i] == "/") signoPorDiv = true;
-			//Aqui se cubren los dos posibles casos de division de linea
-			if(signoMasMenos == true && ((p->subDeclaraciones[i-1] == "*") || (p->subDeclaraciones[i-1] == "/"))){
-				cout << endl << var2 << " := " << var2 << " ";
+			///////////////////////////////////////////////
+			aux = 0;
+			while(subdec[aux]!=""){	
+				if(subdec[aux] == "+" || subdec[aux] == "-"){
+					signoMasMenos = true;
+				}
+				if(subdec[aux] == "*" || subdec[aux] == "/"){
+					signoPorDiv = true;
+				}
+				//Aqui se cubren los dos posibles casos de division de linea
+				/*if(signoMasMenos == true && ((subdec[aux-1] == "*") || (subdec[aux-1] == "/"))){
+					cout << endl << var2 << " := " << var2 << " ";
+				}*/
+				/*else */if(signoPorDiv == true && ((subdec[aux] == "+") || (subdec[aux] == "-"))){
+					cout << endl << var2 << " := " << var2 << " ";
+				}
+				/////////////////////////////////
+				if(subdec[aux]!="=") cout << " ";
+				cout << subdec[aux];
+				aux++;
 			}
-			else if(signoPorDiv == true && ((p->subDeclaraciones[i] == "+") || (p->subDeclaraciones[i] == "-"))){
-				cout << endl << var2 << " := " << var2 << " ";
-			}*/
-			/////////////////////////////////
-			cout << p->subDeclaraciones[i];
+
 			if(p->subDeclaraciones[i+1]!="")cout << endl;
 			i++;
 		}
