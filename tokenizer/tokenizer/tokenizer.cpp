@@ -51,9 +51,9 @@ int main()
 	//Inicio del Tokenizador,
 	/////////////////////////////////////////////////////////////////////////////
 	//Primero insertamos el codigo que evaluaremos
-	string str = "int ard=25*6+3+4*5;while(m<=10){ m++; ard = 3*4+5;} ard =3;if(m==10){ m=m+2+3; m=3*9+8;} int j = 3+4*5; int s = 25; float var=j*j;";
+	string str = "int ard=25*6+3+4*5*10*8;while(m<=10){ m++; ard = 3*4+5;} ard =3;if(m==10){ m=m+2+3; m=3*9+8;} int j = 3+4*5; int s = 25; float var=j*j;";
 	
-	cout << endl << endl << "El codigo c++ a transformar es:\n"<< "int ard = 25*6+3+4*5;\nwhile(m<=10){\n  m++;\nard = 3*4+5;\n}\nard=3;\nif(m==10){\n  m=m+2+3;\n   m=3*9+8;\n}\nint j = 3+4*5;\nint s = 25;\nfloat var=j*j;" << endl << endl;
+	cout << endl << endl << "El codigo c++ a transformar es:\n"<< "int ard = 25*6+3+4*5*10*8;\nwhile(m<=10){\n  m++;\nard = 3*4+5;\n}\nard=3;\nif(m==10){\n  m=m+2+3;\n   m=3*9+8;\n}\nint j = 3+4*5;\nint s = 25;\nfloat var=j*j;" << endl << endl;
 	cout << endl << "A continuacion se realizara la lectura de su codigo en c++ para transformarlo a codigo 3 direcciones";
 	cout << endl;
 	system("pause");

@@ -89,26 +89,12 @@ void pintarBloque3D(bloque* p){
 			//Esta seccion de codigo se encarga de las divisiones de linea
 			//adecuadas (Solo dos elementos max por argumento y que se respete la jerarquia de operadores)
 			///////////////////////////////////////////////
-			/*aux = 0;
+			aux = 0;
 			while(subdec[aux]!=""){	
-				if(subdec[aux] == "+" || subdec[aux] == "-"){
-					signoMasMenos = true;
-				}
-				if(subdec[aux] == "*" || subdec[aux] == "/"){
-					signoPorDiv = true;
-				}
-				//Aqui se cubren los dos posibles casos de division de linea
-				if(signoMasMenos == true && ((subdec[aux-1] == "*") || (subdec[aux-1] == "/"))){
-					cout << endl << var2 << " := " << var2 << " ";
-				}
-				else if(signoPorDiv == true && ((subdec[aux] == "+") || (subdec[aux] == "-"))){
-					cout << endl << var2 << " := " << var2 << " ";
-				}
-				/////////////////////////////////
 				if(subdec[aux]!="=") cout << " ";
 				cout << subdec[aux];
 				aux++;
-			}*/
+			}
 
 			if(p->subDeclaraciones[i+1]!="")cout << endl;
 			i++;
@@ -123,10 +109,28 @@ void pintarBloque3D(bloque* p){
 //la variable cont es el numero de linea en codigo tres direcciones en el que 
 //empezará a pintar
 //Variables auxiliares
-bool operadorMasMenos = false;
-bool operadorPorDiv = false;
 string var;
+int Ts =0;
+int pT;
+bool hayT = false;
 void pintarDeclaracion3D(declaracion* p){
+
+	////////////////////////////////////////////////
+		//Primero realizamos una lectura para extraer las variables auxiliares
+		// e imprimirlas
+		int j = 0;
+		pT = Ts+1;
+		while(p->simbolos[j]!=";"){
+			if( p->simbolos[j] == "*" || p->simbolos[j] == "/" ){
+				Ts++;
+				if(p->simbolos[j-2]=="*"|| p->simbolos[j] == "/" ) hayT = true;
+				if(hayT==false) cout << "t" << Ts << " := " << p->simbolos[j-1] << " " << p->simbolos[j] << " " << p->simbolos[j+1] << endl;
+				else cout << "t" << Ts << " := t" << Ts-1 << " " << p->simbolos[j] << " " << p->simbolos[j+1] << endl;
+			}
+			j++;
+		}
+		hayT = false;
+		/////////////////////////////////////////////////
 
 	int i = 0;
 	while(p->simbolos[i]!=""){
@@ -142,31 +146,42 @@ void pintarDeclaracion3D(declaracion* p){
 			cout << " := ";
 			i++;
 		}
-		////////////////////////////////////////////////
-		else if( p->simbolos[i] == "+" || p->simbolos[i] == "*" || p->simbolos[i] == "/"|| p->simbolos[i] == "-"){
-			if( p->simbolos[i] == "+" ||  p->simbolos[i] == "-") operadorMasMenos = true;
-			if( p->simbolos[i] == "*" || p->simbolos[i] == "/") operadorPorDiv = true;
-			
-			//Aqui se cubren los dos posibles casos de division de linea
-			if(operadorMasMenos == true && ((p->simbolos[i-1] == "*") || (p->simbolos[i-1] == "/"))){
-				cout << endl << var << " := " << var << " ";
+		////////////////////////
+		//Un solo operador
+		if(p->lengthDeclaracion <= 8){
+		//AQUI SIGUELE
+			cout << p->simbolos[i];
+		} 
+
+		//Impresion de las declaraciones usando las variables auxiliares
+		 else if(p->simbolos[i+1]=="=" || (p->simbolos[i+2]=="" && i==2) ) cout << p->simbolos[i];
+
+		else if(p->simbolos[i]=="*" || p->simbolos[i]=="/"){
+			if(p->simbolos[i-2]=="*" || p->simbolos[i-2]=="/" || p->simbolos[i-2]=="=")cout << "t" << pT << " ";
+			while(p->simbolos[i+2]=="*" || p->simbolos[i+2]=="/"){
+				i+=3;
+				pT+=3;
 			}
-			else if(operadorPorDiv == true && ((p->simbolos[i] == "+") || (p->simbolos[i] == "-"))){
-				cout << endl << var << " := " << var << " ";
-			}
-			else if(operadorPorDiv == true && ((p->simbolos[i] == "*") || (p->simbolos[i] == "/"))){
-				cout << endl << var << " := " << var << " ";
-			}
-			else if(operadorMasMenos == true && ((p->simbolos[i-1] == "+") || (p->simbolos[i-1] == "-"))){
-				cout << endl << var << " := " << var << " ";
+		}	
+		///////////////////////
+		else if(p->simbolos[i]=="+" || p->simbolos[i]=="-"){
+			cout << p->simbolos[i] << " ";
+			if(p->simbolos[i+2]=="+" || p->simbolos[i+2]=="-"){
+				if(p->simbolos[i-2]!="="){
+					cout << p->simbolos[i+1];
+					cout << endl;
+					if(p->simbolos[0]!="int" && p->simbolos[0]!="double" && p->simbolos[0]!="float" ){
+						cout << p->simbolos[0] << " := ";
+						cout << p->simbolos[0] << " ";
+					}else{
+						cout << p->simbolos[1] << " := ";
+						cout << p->simbolos[1] << " ";
+					} 
+				}
 			}
 		}
-		cout << p->simbolos[i] << " ";
 		i++;
 	}
 	cout << endl;
-	int operador = 1;
-	int operadorMasMenos = true;
-	int operadorPorDiv = true;
 };
 //////////////////////////////////////////////////////////////////////////////////////

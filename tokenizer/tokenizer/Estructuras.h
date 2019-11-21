@@ -229,6 +229,7 @@ void colaDeclaracion::agregar(string codigo[], int elementoInicialDeclaracion, i
         _principio = p;
         _final = p;
     }
+	p->simbolos[p->lengthDeclaracion] = ";";
     cuantos++;
 }
 /////////////////////////////////////
