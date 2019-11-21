@@ -148,9 +148,12 @@ void pintarDeclaracion3D(declaracion* p){
 		}
 		////////////////////////
 		//Un solo operador
-		if(p->lengthDeclaracion <= 8){
-		//AQUI SIGUELE
-			cout << p->simbolos[i];
+		if(p->lengthDeclaracion <= 8 && (p->simbolos[0]=="int" || p->simbolos[0]=="double" || p->simbolos[0]=="float")){
+			if(p->simbolos[i]=="+" || p->simbolos[i]=="-")cout << p->simbolos[i-1] << " " << p->simbolos[i];
+			else if(p->simbolos[i]=="*" || p->simbolos[i]=="/"){
+				cout << " t" << pT;
+				pT++;
+			}
 		} 
 
 		//Impresion de las declaraciones usando las variables auxiliares
