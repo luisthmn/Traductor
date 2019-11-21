@@ -147,8 +147,15 @@ void pintarDeclaracion3D(declaracion* p){
 			i++;
 		}
 		////////////////////////
+		//Impresion de consola en codigo 3D
+		if(p->simbolos[i]=="cout"){
+			cout << "t" << pT << " := " << p->simbolos[i+3];
+			cout << endl << "out t" << pT;
+			pT++;
+			i+=3;
+		}
 		//Ningun operador
-		if(p->lengthDeclaracion<=4){
+		else if(p->lengthDeclaracion<=4){
 			if(p->simbolos[i]!="=" && p->simbolos[i]!=";")cout << p->simbolos[i];
 		}
 		//Un solo operador
