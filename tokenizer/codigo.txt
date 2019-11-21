@@ -1,11 +1,12 @@
-while(m<=10){ 
-	cout << m;
-	m++;
-} 
-if(m==10){ 
-m=m+2;
-cout << m;
-} 
-int j = 3+4;
+int ard = 25*6+3+4*5;
+while(m<=10){
+  m++;
+ard = 3*4+5;
+}
+ard=3;
+if(m==10){
+  m=m+2+3;
+}
+int j = 3+4*5;
 int s = 25;
 float var=j*j;

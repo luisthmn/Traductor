@@ -49,7 +49,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\crysz\Desktop\Traductor\tokenizer\tokenizer\boost</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\boost</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
