@@ -89,7 +89,7 @@ void pintarBloque3D(bloque* p){
 			//Esta seccion de codigo se encarga de las divisiones de linea
 			//adecuadas (Solo dos elementos max por argumento y que se respete la jerarquia de operadores)
 			///////////////////////////////////////////////
-			aux = 0;
+			/*aux = 0;
 			while(subdec[aux]!=""){	
 				if(subdec[aux] == "+" || subdec[aux] == "-"){
 					signoMasMenos = true;
@@ -98,17 +98,17 @@ void pintarBloque3D(bloque* p){
 					signoPorDiv = true;
 				}
 				//Aqui se cubren los dos posibles casos de division de linea
-				/*if(signoMasMenos == true && ((subdec[aux-1] == "*") || (subdec[aux-1] == "/"))){
+				if(signoMasMenos == true && ((subdec[aux-1] == "*") || (subdec[aux-1] == "/"))){
 					cout << endl << var2 << " := " << var2 << " ";
-				}*/
-				/*else */if(signoPorDiv == true && ((subdec[aux] == "+") || (subdec[aux] == "-"))){
+				}
+				else if(signoPorDiv == true && ((subdec[aux] == "+") || (subdec[aux] == "-"))){
 					cout << endl << var2 << " := " << var2 << " ";
 				}
 				/////////////////////////////////
 				if(subdec[aux]!="=") cout << " ";
 				cout << subdec[aux];
 				aux++;
-			}
+			}*/
 
 			if(p->subDeclaraciones[i+1]!="")cout << endl;
 			i++;
@@ -117,8 +117,6 @@ void pintarBloque3D(bloque* p){
 		cout << endl << "L" << etiquetas << ":\n";
 		etiquetas++;
 	}
-	signoMasMenos = false;
-	signoPorDiv = false;
 };
 //////////////////////////////////////////////////////////////////////////////////////
 //Esta funcion recibe una declaracion (fuera de bloque) en c++ y lo pasa a codigo de tres direcciones
@@ -154,6 +152,12 @@ void pintarDeclaracion3D(declaracion* p){
 				cout << endl << var << " := " << var << " ";
 			}
 			else if(operadorPorDiv == true && ((p->simbolos[i] == "+") || (p->simbolos[i] == "-"))){
+				cout << endl << var << " := " << var << " ";
+			}
+			else if(operadorPorDiv == true && ((p->simbolos[i] == "*") || (p->simbolos[i] == "/"))){
+				cout << endl << var << " := " << var << " ";
+			}
+			else if(operadorMasMenos == true && ((p->simbolos[i-1] == "+") || (p->simbolos[i-1] == "-"))){
 				cout << endl << var << " := " << var << " ";
 			}
 		}
