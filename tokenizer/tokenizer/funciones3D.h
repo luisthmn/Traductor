@@ -147,8 +147,12 @@ void pintarDeclaracion3D(declaracion* p){
 			i++;
 		}
 		////////////////////////
+		//Ningun operador
+		if(p->lengthDeclaracion<=4){
+			if(p->simbolos[i]!="=" && p->simbolos[i]!=";")cout << p->simbolos[i];
+		}
 		//Un solo operador
-		if(p->lengthDeclaracion <= 8 && (p->simbolos[0]=="int" || p->simbolos[0]=="double" || p->simbolos[0]=="float")){
+		else if(p->lengthDeclaracion <= 8 && (p->simbolos[0]=="int" || p->simbolos[0]=="double" || p->simbolos[0]=="float")){
 			if(p->simbolos[i]=="+" || p->simbolos[i]=="-")cout << p->simbolos[i-1] << " " << p->simbolos[i];
 			else if(p->simbolos[i]=="*" || p->simbolos[i]=="/"){
 				cout << " t" << pT;
