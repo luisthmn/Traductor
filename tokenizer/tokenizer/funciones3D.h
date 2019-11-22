@@ -10,6 +10,11 @@
 using namespace std;
 
 
+//Variables auxiliares
+string var;
+int Ts =0;
+int pT;
+bool hayT = false;
 int etiquetas = 1;
 int cont = 0;
 //Funcion auxiliar que revisa que una cadena contenga solo digitos
@@ -79,20 +84,35 @@ void pintarBloque3D(bloque* p){
 			int aux = 0;
 			var2 = p->subDeclaraciones[i][j];
 			while (true){
-				if(p->subDeclaraciones[i][j]==';')break;
 				if(p->subDeclaraciones[i][j] == ' ') j++;
 				subdec[aux] = p->subDeclaraciones[i][j];
+				if(p->subDeclaraciones[i][j]==';')break;
 				j++;
 				aux++;
 			}
-			
+			////////////////////////////////////////////////
+			//Primero realizamos una lectura para extraer las variables auxiliares
+			// e imprimirlas
+			j = 0;
+			pT = Ts+1;
+			while(subdec[j]!=";"){
+				if( subdec[j] == "*" || subdec[j] == "/" ){
+					Ts++;
+					if(subdec[j-2]=="*"|| subdec[j] == "/" ) hayT = true;
+					if(hayT==false) cout << "t" << Ts << " := " << subdec[j-1] << " " << subdec[j] << " " << subdec[j+1] << endl;
+					else cout << "t" << Ts << " := t" << Ts-1 << " " << subdec[j] << " " << subdec[j+1] << endl;
+				}
+				j++;
+			}
+			hayT = false;
+		/////////////////////////////////////////////////
 			//Esta seccion de codigo se encarga de las divisiones de linea
 			//adecuadas (Solo dos elementos max por argumento y que se respete la jerarquia de operadores)
 			///////////////////////////////////////////////
 			aux = 0;
 			while(subdec[aux]!=""){	
 				if(subdec[aux]!="=") cout << " ";
-				cout << subdec[aux];
+				if(subdec[aux]!=";")cout << subdec[aux];
 				aux++;
 			}
 
@@ -108,11 +128,7 @@ void pintarBloque3D(bloque* p){
 //Esta funcion recibe una declaracion (fuera de bloque) en c++ y lo pasa a codigo de tres direcciones
 //la variable cont es el numero de linea en codigo tres direcciones en el que 
 //empezará a pintar
-//Variables auxiliares
-string var;
-int Ts =0;
-int pT;
-bool hayT = false;
+
 void pintarDeclaracion3D(declaracion* p){
 
 	////////////////////////////////////////////////
@@ -151,6 +167,12 @@ void pintarDeclaracion3D(declaracion* p){
 		if(p->simbolos[i]=="cout"){
 			cout << "t" << pT << " := " << p->simbolos[i+3];
 			cout << endl << "out t" << pT;
+			pT++;
+			i+=3;
+		}
+		else if(p->simbolos[i]=="cin"){
+			cout << "t" << pT << " := " << p->simbolos[i+3];
+			cout << endl << "in t" << pT;
 			pT++;
 			i+=3;
 		}
