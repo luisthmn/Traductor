@@ -110,12 +110,87 @@ void pintarBloque3D(bloque* p){
 			//adecuadas (Solo dos elementos max por argumento y que se respete la jerarquia de operadores)
 			///////////////////////////////////////////////
 			aux = 0;
-			while(subdec[aux]!=""){	
-				if(subdec[aux]!="=") cout << " ";
-				if(subdec[aux]!=";")cout << subdec[aux];
+			while(subdec[aux]!=""){
+				if( subdec[aux]== "int"  ||  subdec[aux]== "double"  ||  subdec[aux]== "float"){
+					aux++;
+					cout << subdec[aux];
+					//Guardamos la variable a la que le estamos asignando valor
+					var = subdec[aux];
+					cout << " := ";
+					aux+=2;
+				}
+				else if( subdec[aux] == "="){
+					cout << " := ";
+					aux++;
+				}
+				////////////////////////
+				//Impresion de consola en codigo 3D
+				if(subdec[aux]=="cout"){
+					cout << "t" << pT << " := " << subdec[aux+3];
+					cout << endl << "out t" << pT;
+					pT++;
+					aux+=3;
+				}
+				else if(subdec[aux]=="cin"){
+					cout << "t" << pT << " := " << subdec[aux+3];
+					cout << endl << "in t" << pT;
+					pT++;
+					aux+=3;
+				}
+				//Ningun operador
+				else if(subdec[3]==""){
+					if(subdec[aux]!="=" && subdec[aux]!=";")cout << subdec[aux];
+				}
+				//Un solo operador
+				else if(subdec[7]=="" && (subdec[0]=="int" || subdec[0]=="double" || subdec[0]=="float")){
+					if(subdec[aux]=="+" || subdec[aux]=="-")cout << subdec[aux-1] << " " << subdec[aux];
+					else if(subdec[aux]=="*" || subdec[aux]=="/"){
+						cout << " t" << pT;
+						pT++;
+					}
+				} 
+
+				//Impresion de las declaraciones usando las variables auxiliares
+				 else if(subdec[aux+1]=="=" || (subdec[aux+2]=="" && i==2) ) cout << subdec[aux-1];
+
+				else if(subdec[aux]=="*" || subdec[aux]=="/"){
+					if(subdec[aux-2]=="*" || subdec[aux-2]=="/" || subdec[aux-2]=="=")cout << "t" << pT << " ";
+					while(subdec[aux+2]=="*" || subdec[aux+2]=="/"){
+						aux+=3;
+						pT+=3;
+					}
+				}	
+				///////////////////////
+				else if(subdec[aux]=="+" || subdec[aux]=="-"){
+					if(subdec[aux-2]=="=") cout << subdec[aux-1] << " "; 
+					cout << subdec[aux] << " ";
+					//Un solo operador
+					if(subdec[aux+2]==";") cout << subdec[aux+1];
+
+					while(subdec[aux+2]=="+"|| subdec[aux+2]=="-"){
+						cout << subdec[aux+1] << " ";
+						cout << endl << subdec[0] << " := "<< subdec[0] << " " <<  subdec[aux+2] << " " << subdec[aux+3]; 
+						aux+=2;
+					} 
+					if(subdec[aux+2]=="+" || subdec[aux+2]=="-"){
+						if(subdec[aux-2]!="="){
+							cout << subdec[aux+1];
+							cout << endl;
+							if(subdec[0]!="int" && subdec[0]!="double" && subdec[0]!="float" ){
+								cout << subdec[0] << " := ";
+								cout << subdec[0] << " ";
+							}else{
+								cout << subdec[1] << " := ";
+								cout << subdec[1] << " ";
+							} 
+						}
+					}
+				}
 				aux++;
 			}
+			//-----------------------------------------------------------------------------------------------------------------
 
+			//-------------------------------------------------------------------------------------------------------------------
 			if(p->subDeclaraciones[i+1]!="")cout << endl;
 			i++;
 		}
