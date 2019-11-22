@@ -269,7 +269,13 @@ void pintarBloque3D(bloque* p){
 				} 
 
 				//Impresion de las declaraciones usando las variables auxiliares
-				 else if(subdec[aux+1]=="=" || (subdec[aux+2]=="" && i==2) ) cout << subdec[aux-1];
+				else if(subdec[aux+1]=="=" || (subdec[aux+2]=="" && i==2) ){
+					int cont=0;
+					while(subdec[cont]!=":"){
+						cout << subdec[cont];
+						cont++;
+					}
+				}
 
 				else if(subdec[aux]=="*" || subdec[aux]=="/"){
 					if(subdec[aux-2]=="*" || subdec[aux-2]=="/" || subdec[aux-2]=="=")cout << "t" << pT << " ";
