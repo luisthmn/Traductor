@@ -1,8 +1,8 @@
 int ard = 25*6+3+4*5*10*8;
 cout << "Estupefacto";
 while(m<=10){
-  m++;
-ard = 3*4+5;
+  m=m+1;
+  ard = 3*4+5;
 }
 ard=3;
 if(m==10){

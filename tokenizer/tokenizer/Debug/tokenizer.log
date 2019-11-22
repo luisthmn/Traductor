@@ -1,4 +1,4 @@
-﻿Build started 21/11/2019 21:21:00.
+﻿Build started 21/11/2019 21:55:16.
      1>Project "C:\Users\ALAUR\Desktop\Luis Thomson\Lenguajes de Programacion\Traductor\tokenizer\tokenizer\tokenizer.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\tokenizer.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -27,4 +27,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.35
+Time Elapsed 00:00:02.42
