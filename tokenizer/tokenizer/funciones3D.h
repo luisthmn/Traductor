@@ -17,6 +17,7 @@ int pT;
 bool hayT = false;
 int etiquetas = 1;
 int cont = 0;
+bool hayOperador = false;
 //Funcion auxiliar que revisa que una cadena contenga solo digitos
 //////////////////////////////////////////////////////////////////////////////////////
 bool is_digits(const std::string &str)
@@ -165,6 +166,8 @@ void pintarBloque3D(bloque* p){
 						}
 					}
 				}
+				if(subdec[aux]==";" && (subdec[aux-2]!="+" && subdec[aux-2]!="-" && subdec[aux-2]!="/"&&subdec[aux-2]!="*")) cout << subdec[aux-1];
+			
 				aux++;
 			}
 			//-----------------------------------------------------------------------------------------------------------------
@@ -297,6 +300,7 @@ void pintarBloque3D(bloque* p){
 						aux+=2;
 					} 
 					if(subdec[aux+2]=="+" || subdec[aux+2]=="-"){
+
 						if(subdec[aux-2]!="="){
 							cout << subdec[aux+1];
 							cout << endl;
@@ -310,6 +314,7 @@ void pintarBloque3D(bloque* p){
 						}
 					}
 				}
+				if(subdec[aux]==";" && (subdec[aux-2]!="+" && subdec[aux-2]!="-" && subdec[aux-2]!="/"&&subdec[aux-2]!="*")) cout << subdec[aux-1];
 				aux++;
 			}
 			//-----------------------------------------------------------------------------------------------------------------
