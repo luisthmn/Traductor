@@ -1,0 +1,10 @@
+int v=v;
+while(v==v){
+ v=v;
+}
+v=v;
+if(v==v){
+ v=v;
+}
+v= v+v;
+v = v-2;

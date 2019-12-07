@@ -314,7 +314,9 @@ void pintarBloque3D(bloque* p){
 						}
 					}
 				}
-				if(subdec[aux]==";" && (subdec[aux-2]!="+" && subdec[aux-2]!="-" && subdec[aux-2]!="/"&&subdec[aux-2]!="*")) cout << subdec[aux-1];
+				if(subdec[aux]==";" && (subdec[aux-2]!="+" && subdec[aux-2]!="-" && subdec[aux-2]!="/"&&subdec[aux-2]!="*")){
+					cout << subdec[aux-1];
+				} 
 				aux++;
 			}
 			//-----------------------------------------------------------------------------------------------------------------
@@ -403,8 +405,9 @@ void pintarDeclaracion3D(declaracion* p){
 				pT+=3;
 			}
 		}	
-		///////////////////////
+		///////////////////////										ESTE ES UN COMENTARIO
 		else if(p->simbolos[i]=="+" || p->simbolos[i]=="-"){
+			if(Ts==0)cout << p->simbolos[i-1];
 			cout << p->simbolos[i] << " ";
 			if(p->simbolos[i+2]=="+" || p->simbolos[i+2]=="-"){
 				if(p->simbolos[i-2]!="="){
@@ -419,6 +422,7 @@ void pintarDeclaracion3D(declaracion* p){
 					} 
 				}
 			}
+			if(Ts==0)cout << p->simbolos[i+1];
 		}
 		i++;
 	}
